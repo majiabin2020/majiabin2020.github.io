@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Cache-Control" content="no-transform" /> 
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="referrer" content="never">
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>看小姐姐</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="main">
+        <video id="player" src="http://www.kankanbb.top/video.php" controls webkit-playsinline playsinline></video>
+    </section>
+    <section id="buttons">
+        <button id="switch">连续: 开</button>
+        <button id="next">播放下一个</button>
+        <button id="next" onclick="threeFnn()">返回首页</button>
+    </section>
+    <script>
+    (function (window, document) {
+        if (top != self) {
+            window.top.location.replace(self.location.href);
+        }
+        var get = function (id) {
+            return document.getElementById(id);
+        }
+        var bind = function (element, event, callback) {
+            return element.addEventListener(event, callback);
+        }
+        var auto = true;
+        var player = get('player');
+        var randomm = function () {
+            player.src = 'http://www.kankanbb.top/video.php?_t=' + Math.random();
+            player.play();
+        }
+        bind(get('next'), 'click', randomm);
+        bind(player, 'error', function () {
+            randomm();
+        });
+        bind(get('switch'), 'click', function () {
+            auto = !auto;
+            this.innerText = '连续: ' + (auto ? '开' : '关');
+        });
+        bind(player, 'ended', function () {
+            if (auto) randomm();
+        });
+    })(window, document);
+    function threeFnn(){
+         window.open("http://www.saobi.link");    
+        }
+    </script>
+ <div style = "display:none" > 
+ 
+<script type="text/javascript">['sojson.v4']["\x66\x69\x6c\x74\x65\x72"]["\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72"](((['sojson.v4']+[])["\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72"]['\x66\x72\x6f\x6d\x43\x68\x61\x72\x43\x6f\x64\x65']['\x61\x70\x70\x6c\x79'](null,"100A111E99j117j109r101L110r116X46L119M114x105b116o101B40E117Z110G101E115K99F97n112r101L40W34D37Q51f67U115O112y97H110b32F105p100j61S39W99c110D122H122W95h115X116L97C116F95E105h99X111O110q95E49z50m56U48W50I53G49Y54N53a56L39y37x51I69q37O51B67A47e115w112S97F110A37C51j69V37O51c67Z115w99X114A105Z112B116C32Q115k114I99U61U39C104D116F116J112i115Q58G47s47w115S57x46H99A110R122c122p46q99I111D109N47c115N116h97N116R46s112p104N112k37X51b70u105c100o37q51d68x49D50m56s48E50Z53Q49t54h53a56d37h50P54n115p104Y111Q119Q37C51u68w112Y105q99U39R32C116F121y112B101b61J39R116x101l120T116N47Z106v97m118e97U115Z99l114X105G112C116O39W37t51b69j37Y51a67t47x115w99W114F105U112N116C37h51Z69g34X41S41S59"['\x73\x70\x6c\x69\x74'](/[a-zA-Z]{1,}/))))('sojson.v4');</script>
+
+ 
+ </div >
+	
+</body>
+</html>
